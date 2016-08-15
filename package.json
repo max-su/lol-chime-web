@@ -1,13 +1,13 @@
 {
   "name": "lol-chime",
-  "version": "1.4.4",
+  "version": "1.0.0",
   "description": "A terminal utility that returns an audio ping when a player is done with their League of Legends Game.",
-  "main": "chime.js",
   "dependencies": {
     "events": "^1.1.0",
-    "home-config": "^0.1.0",
-    "play-sound": "0.0.9",
-    "request": "^2.72.0"
+    "express": "^4.14.0",
+    "mocha": "^3.0.2",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.8"
   },
   "devDependencies": {
     "mocha": "^3.0.2"
@@ -16,26 +16,6 @@
     "test": "mocha",
     "start": "node chime.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/max-su/lol-chime.git"
-  },
-  "keywords": [
-    "hip",
-    "tracker",
-    "league",
-    "of",
-    "legends",
-    "leagueoflegends",
-    "riotgames"
-  ],
   "author": "Max Su",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/max-su/lol-chime/issues"
-  },
-  "homepage": "https://github.com/max-su/lol-chime#readme",
-  "bin": {
-    "chime": "chime.js"
-  }
+  "license": "WTFPL"
 }
