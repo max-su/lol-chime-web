@@ -34,13 +34,13 @@ header {
 	color: #E4BE5B;
 }
 
-#inputBox {
+#summonerName {
 	color: #793F31;
 	width: 350px;
 }
 
 /*#queryForm> *{/*hiding the text input, button, and the bard gif. */
-#inputBox, #submitButton, .dropdown-toggle {
+#summonerName, #search, .dropdown-toggle {
 	height: 50px;
 }
 
@@ -49,5 +49,3 @@ header {
 	width: 50px;
 	display: none;
 }
-
-

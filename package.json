@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A terminal utility that returns an audio ping when a player is done with their League of Legends Game.",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "events": "^1.1.0",
     "express": "^4.14.0",
     "mocha": "^3.0.2",
