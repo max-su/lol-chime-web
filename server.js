@@ -18,6 +18,9 @@ var summoner;
 
 io.on("connection", function(socket) {
     socket.on("trackSummoner", function(data) {
+        if (typeof summoner !== "undefined") {
+            summoner.removeAllListeners();
+        }
         summoner = new SummonerEmitter(data.summoner, data.region);
         leagueLib.initializeEvents(summoner);
     });
