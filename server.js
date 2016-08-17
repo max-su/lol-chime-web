@@ -12,11 +12,11 @@ var io = require("socket.io")(server);
 app.use(express.static("public"));
 
 router(app);
-leagueLib.initializeSocket(io);
 
 var summoner;
 
 io.on("connection", function(socket) {
+    leagueLib.initializeSocket(socket);
     socket.on("trackSummoner", function(data) {
         if (typeof summoner !== "undefined") {
             summoner.removeAllListeners();
