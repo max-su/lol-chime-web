@@ -3,6 +3,7 @@ $(document).ready(function() { // when the document is ready, the function insid
 
     socket.on("summonerFound", function(name) {
         $("#summoner_data").show();
+        $("#results_heading").slideDown("slow");
         setName(name);
         setStatus("Checking...", "goldenrod");
     });
@@ -16,7 +17,6 @@ $(document).ready(function() { // when the document is ready, the function insid
     });
 
     socket.on("gameEnd", function() {
-        $("#results_body").slideUp("slow");
         setStatus("Game ended.", "red");
     });
 
@@ -54,7 +54,9 @@ $(document).ready(function() { // when the document is ready, the function insid
             alert("Please select a region");
             return;
         }
-        $("#results_body").slideUp("slow");
+        $("#results_body").slideUp("fast", function() {
+            $("#results_heading").slideUp("fast");
+        });
         socket.emit("trackSummoner", {
             "summoner": summonerName,
             "region": region
@@ -101,5 +103,3 @@ function setGameType(gameType) {
 function setGameMode(gameMode) {
     $("#gameMode").text("Game Mode: " + gameMode);
 }
-
-$("#summoner_data").hide();
