@@ -50,7 +50,7 @@ $(document).ready(function() { // when the document is ready, the function insid
     $("#search").on("click", function(){
         var summonerName = $("#summonerName").val();
         var region = $("#region").html();
-        if (region === "") {
+        if (region.trim() === "Region") {
             alert("Please select a region");
             return;
         }
