@@ -49,6 +49,10 @@ $(document).ready(function() { // when the document is ready, the function insid
     $("#search").on("click", function(){
         var summonerName = $("#summonerName").val();
         var region = $("#region").html();
+        if (region === "") {
+            alert("Please select a region");
+            return;
+        }
         socket.emit("trackSummoner", {
             "summoner": summonerName,
             "region": region
