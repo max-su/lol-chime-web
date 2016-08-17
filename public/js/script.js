@@ -1,5 +1,4 @@
 $(document).ready(function() { // when the document is ready, the function inside the paremeter of ready will be run.
-    $("#summoner_data").hide();
     var socket = io();
 
     socket.on("summonerFound", function(name) {
@@ -17,6 +16,7 @@ $(document).ready(function() { // when the document is ready, the function insid
     });
 
     socket.on("gameEnd", function() {
+        $("#results_body").slideUp("slow");
         setStatus("Game ended.", "red");
     });
 
@@ -33,6 +33,7 @@ $(document).ready(function() { // when the document is ready, the function insid
     });
 
     socket.on("init", function(data) {
+        $("#results_body").slideDown("slow");
         setChampion(data.champion);
         setMap(data.map);
         setQueueType(data.queueType);
@@ -53,6 +54,7 @@ $(document).ready(function() { // when the document is ready, the function insid
             alert("Please select a region");
             return;
         }
+        $("#results_body").slideUp("slow");
         socket.emit("trackSummoner", {
             "summoner": summonerName,
             "region": region
@@ -99,3 +101,5 @@ function setGameType(gameType) {
 function setGameMode(gameMode) {
     $("#gameMode").text("Game Mode: " + gameMode);
 }
+
+$("#summoner_data").hide();
