@@ -13,15 +13,10 @@ app.use(express.static("public"));
 
 router(app);
 
-var summoner;
-
 io.on("connection", function(socket) {
-    leagueLib.initializeSocket(socket);
     socket.on("trackSummoner", function(data) {
-        if (typeof summoner !== "undefined") {
-            summoner.removeAllListeners();
-        }
         summoner = new SummonerEmitter(data.summoner, data.region);
+        summoner.setSocket(socket);
         leagueLib.initializeEvents(summoner);
     });
 });
