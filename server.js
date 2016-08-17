@@ -21,7 +21,7 @@ io.on("connection", function(socket) {
             clients[socket.id].removeAllListeners();
             clients[socket.id] = 0;
             delete clients[socket.id];
-        } catch {
+        } catch (e) {
             // Client has not made a request to track
         }
     });
