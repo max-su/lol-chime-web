@@ -2,33 +2,17 @@
 
 Summary
 --------
-A terminal utility serving the League of Legends community that runs client side and notifies them when their friends are finished with their game. 
+A webapp serving the League of Legends community that runs notifies them when their friends are finished with their game. 
 
 Use
 --------
-*   Run in a terminal
-```
-chime <%= INSERT IGN HERE %>
-```
-```
-chime boostedAnimal
-```
-*   Would be a query for the summoner boostedAnimal in whatever region you specify in the config file. 
-*   Please keep in mind that Live Game data for 'Bot' cannot be retrieved from Riot’s official API.
+*   ```node server.js```
+*   Go to ```http://localhost:5000/```
 
 Dependencies
 --------
-*   Please install [Node.js & NPM](https://nodejs.org/en/download/) if you haven't already! 
-*   We require mplayer to run the audio chime in node. (If you don't install it, that's okay but you might not get the audio chime!)
-*   In Ubuntu run
-```
-sudo apt-get install mplayer
-```
-*   Mplayer installation for [OSX](https://sourceforge.net/projects/mplayerosx/) & [Windows](https://sourceforge.net/projects/mplayerwin/)
-*   Open up terminal and run
-```
-npm install lol-chime -g
-```
+*   Please install [Node.js & NPM](https://nodejs.org/en/download/package-manager/) if you haven't already!
+*   Fill out the config.
 
 Config
 --------
@@ -44,9 +28,8 @@ vim .env.example
 *   10 requests every 10 seconds
 *   500 requests every 10 minutes
 *   Please keep in mind you do not need to put quotation marks around these strings or numbers!
-*   Finally copy over the example to the actual ```~/.chimerc```
-*   ``` cp .env.example ~/.chimerc ```
-   
+*   ```cp .env.example .env```
+
 Regions
 -------
 *   BR
