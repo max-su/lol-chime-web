@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "node chime.js"
+    "start": "node server.js"
   },
   "author": "Max Su",
   "license": "WTFPL"
