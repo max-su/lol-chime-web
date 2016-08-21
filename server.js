@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 router(app);
 
-clients = {}
+clients = {};
 
 io.on("connection", function(socket) {
     socket.on("disconnect", function() {
@@ -33,6 +33,6 @@ io.on("connection", function(socket) {
     });
 });
 
-server.listen(5000, function() {
-    console.log("[*] Server started on port 5000...");
+server.listen(process.env.PORT || 5000, function() {
+    console.log("[*] Server started on port 5000... or heroku's magical port");
 });
