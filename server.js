@@ -14,6 +14,10 @@ app.use(express.static("public"));
 router(app);
 
 clients = {};
+/*clients[socket.id] = summoner;
+ *Keys : Socket Id
+ *Value : Summoner Reference
+ */
 
 io.on("connection", function(socket) {
     socket.on("disconnect", function() {
